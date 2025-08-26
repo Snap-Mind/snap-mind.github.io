@@ -2,10 +2,13 @@
 import React from 'react';
 import { Button, Card } from '@heroui/react';
 import { Icon } from '@iconify/react';
+import {useTranslations} from 'next-intl';
 
 import Threads from '../blocks/Backgrounds/Threads/Threads';
 
 export default function Home() {
+  const t = useTranslations('LandingPage');
+
   // Down arrow scroll logic
   React.useEffect(() => {
     const handleScroll = () => {
@@ -42,10 +45,9 @@ export default function Home() {
         {/* Hero Section */}
         <section className="min-h-[calc(100vh-var(--navbar-height))] text-center mb-20 flex items-center justify-center relative" style={{ scrollSnapAlign: 'start' }}>
           <div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold mb-6">AI at the Speed of Thought</h1>
+            <h1 className="text-4xl sm:text-5xl font-extrabold mb-6">{t('headline')}</h1>
             <p className="text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              No more copy-paste. No more app switching. Just select text, hit a hotkey, and get
-              instant translations, rewrites, or answers—right where you work.
+              {t('subHeadline')}
             </p>
             <Button
               className="bg-foreground text-default"
@@ -59,7 +61,7 @@ export default function Home() {
                 }
               }}
             >
-              👉 Supercharge Your Workflow with SnapMind
+              {t('heroCTA')}
             </Button>
           </div>
           {/* Down Arrow */}
@@ -79,23 +81,23 @@ export default function Home() {
 
         {/* Why This App Section */}
         <section id="why-this-app" className="mb-20">
-          <h2 className="text-3xl font-semibold text-center mb-10">Why This App</h2>
+          <h2 className="text-3xl font-semibold text-center mb-10">{t('whyThisApp')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: 'lucide:zap',
-                title: 'Blazing Fast',
-                description: 'Trigger AI with a single keystroke.',
+                title: t('reason1'),
+                description: t('reason1Description'),
               },
               {
                 icon: 'lucide:layout',
-                title: 'Seamless',
-                description: 'Works inside any app, without breaking your flow.',
+                title: t('reason2'),
+                description: t('reason2Description'),
               },
               {
                 icon: 'lucide:settings',
-                title: 'Customizable',
-                description: 'Set your own prompts for the tasks you repeat most.',
+                title: t('reason3'),
+                description: t('reason3Description'),
               },
             ].map((feature, index) => (
               <Card key={index} className="p-6 text-center">
@@ -112,13 +114,13 @@ export default function Home() {
           <h2 className="text-3xl font-semibold text-center mb-10">Use Cases</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              'Quickly translate selected text into any language, anywhere.',
-              'Make your writing clearer, shorter, or more professional with one keystroke.',
-              'Turn long paragraphs, articles, or reports into key takeaways instantly.',
-              'Highlight any concept, code snippet, or sentence—and get a simple explanation.',
-              'Generate replies, emails, or text snippets without switching apps.',
-              'Check grammar, simplify complex content, or rephrase text to aid understanding.',
-              'Turn notes or random thoughts into structured ideas, outlines, or action items.',
+              t('useCase1'),
+              t('useCase2'),
+              t('useCase3'),
+              t('useCase4'),
+              t('useCase5'),
+              t('useCase6'),
+              t('useCase7'),
             ].map((useCase, index) => (
               <Card key={index} className="p-4">
                 <div className="flex items-start">
@@ -136,7 +138,7 @@ export default function Home() {
         {/* Tagline Section */}
         <section className="text-center mb-20">
           <h2 className="text-3xl font-bold italic mb-4">
-            {'"Don\'t adapt to AI. Let AI adapt to you."'}
+            {t('finalCTA')}
           </h2>
         </section>
 
@@ -148,7 +150,7 @@ export default function Home() {
             variant="shadow"
             endContent={<Icon icon="lucide:download" />}
           >
-            ⚡ Download now and make AI your fastest shortcut
+            {t('downloadCTA')}
           </Button>
         </section>
       </main>

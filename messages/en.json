@@ -1,5 +1,36 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
+  "LandingPage": {
+    "headline": "AI at the Speed of Thought",
+    "subHeadline": "No more copy-paste. No more app switching. Just select text, hit a hotkey, and get instant translations, rewrites, or answers—right where you work.",
+    "heroCTA": "👉 Supercharge Your Workflow with SnapMind",
+    "whyThisApp": "Why This App",
+    "reason1": "Blazing Fast",
+    "reason2": "Seamless",
+    "reason3": "Customizable",
+    "reason1Description": "Trigger AI with a single keystroke.",
+    "reason2Description": "Works inside any app, without breaking your flow.",
+    "reason3Description": "Set your own prompts for the tasks you repeat most.",
+    "useCase1": "Quickly translate selected text into any language, anywhere.",
+    "useCase2": "Make your writing clearer, shorter, or more professional with one keystroke.",
+    "useCase3": "Turn long paragraphs, articles, or reports into key takeaways instantly.",
+    "useCase4": "Highlight any concept, code snippet, or sentence—and get a simple explanation.",
+    "useCase5": "Generate replies, emails, or text snippets without switching apps.",
+    "useCase6": "Check grammar, simplify complex content, or rephrase text to aid understanding.",
+    "useCase7": "Turn notes or random thoughts into structured ideas, outlines, or action items.",
+    "finalCTA": "\"Don't adapt to AI. Let AI adapt to you.\"",
+    "downloadCTA": "⚡ Download now and make AI your fastest shortcut"
+
+  },
+  "Header": {
+    "brand": "SnapMind",
+    "githubRepo": "GitHub Repository"
+  },
+  "Footer": {
+    "copyright": "Louis-7 (GitHub). All rights reserved.",
+    "github": "GitHub"
+  },
+  "Layout": {
+    "title": "Snap Mind - Instant Recall with a Keystroke",
+    "description": "Snap Mind is the fastest way to capture your thoughts. Summon a prompt with a simple hotkey, speak your mind, and let us handle the rest."
   }
 }

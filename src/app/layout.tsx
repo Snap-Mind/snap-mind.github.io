@@ -14,13 +14,17 @@ export const metadata: Metadata = {
     'Snap Mind is the fastest way to capture your thoughts. Summon a prompt with a simple hotkey, speak your mind, and let us handle the rest.',
 };
 
-export default function RootLayout({
+import { cookies } from 'next/headers';
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const store = await cookies();
+  const locale = store.get('locale')?.value || 'en';
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={inter.className}>
         <Header />
         <Providers>{children}</Providers>

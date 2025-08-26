@@ -42,6 +42,7 @@ function LanguageSwitcher() {
       className="w-[8rem]"
       size="sm"
       label="Language"
+      placeholder="Languages"
       onChange={(e) => handleChange(e)}
       selectedKeys={[selectedLanguage?.key ? selectedLanguage.key : '']}
     >

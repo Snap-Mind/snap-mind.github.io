@@ -34,13 +34,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen relative">
+  <div className="min-h-screen relative" style={{ '--navbar-height': '4rem' } as React.CSSProperties}>
       <div className="absolute inset-0 w-full h-[600px] -z-10">
         <Threads amplitude={2.8} distance={0.2} enableMouseInteraction={true} />
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <section className="h-screen text-center mb-20 flex items-center justify-center relative">
+        <section className="min-h-[calc(100vh-var(--navbar-height))] text-center mb-20 flex items-center justify-center relative" style={{ scrollSnapAlign: 'start' }}>
           <div>
             <h1 className="text-4xl sm:text-5xl font-extrabold mb-6">AI at the Speed of Thought</h1>
             <p className="text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -53,10 +53,10 @@ export default function Home() {
               variant="shadow"
               endContent={<Icon icon="lucide:arrow-right" />}
               onPress={() => {
-              const ctaSection = document.querySelector('#final-cta');
-              if (ctaSection) {
-                ctaSection.scrollIntoView({ behavior: 'smooth' });
-              }
+                const ctaSection = document.querySelector('#final-cta');
+                if (ctaSection) {
+                  ctaSection.scrollIntoView({ behavior: 'smooth' });
+                }
               }}
             >
               👉 Supercharge Your Workflow with SnapMind
@@ -77,8 +77,8 @@ export default function Home() {
           </button>
         </section>
 
-  {/* Why This App Section */}
-  <section id="why-this-app" className="mb-20">
+        {/* Why This App Section */}
+        <section id="why-this-app" className="mb-20">
           <h2 className="text-3xl font-semibold text-center mb-10">Why This App</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -141,7 +141,7 @@ export default function Home() {
         </section>
 
         {/* Final CTA Section */}
-        <section id='final-cta' className="text-center">
+        <section id="final-cta" className="text-center">
           <Button
             className="bg-foreground text-default"
             size="lg"

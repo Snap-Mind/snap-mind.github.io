@@ -1,0 +1,35 @@
+{
+  "LandingPage": {
+    "headline": "思维速度的AI",
+    "subHeadline": "无需复制粘贴，无需切换应用。只需选中文本，按下快捷键，即可在工作界面即时翻译、改写或获取答案。",
+    "heroCTA": "👉 用 SnapMind 提升你的工作流",
+    "whyThisApp": "为什么选择这个应用",
+    "reason1": "极快",
+    "reason2": "无缝",
+    "reason3": "可定制",
+    "reason1Description": "一键触发AI。",
+    "reason2Description": "在任何应用内工作，流程不被打断。",
+    "reason3Description": "为常用任务自定义提示词。",
+    "useCase1": "随时随地快速翻译选中文本。",
+    "useCase2": "一键让你的写作更清晰、更简洁或更专业。",
+    "useCase3": "瞬间将长段落、文章或报告提炼为关键要点。",
+    "useCase4": "高亮任何概念、代码片段或句子，获得简单解释。",
+    "useCase5": "无需切换应用即可生成回复、邮件或文本片段。",
+    "useCase6": "检查语法、简化复杂内容或重述文本以便理解。",
+    "useCase7": "将笔记或灵感转化为结构化想法、大纲或行动项。",
+    "finalCTA": "“不要适应AI，让AI适应你。”",
+    "downloadCTA": "⚡ 立即下载，让AI成为你的最快捷方式"
+  },
+  "Header": {
+    "brand": "SnapMind",
+    "githubRepo": "GitHub 仓库"
+  },
+  "Footer": {
+    "copyright": "Louis-7 (GitHub)。保留所有权利。",
+    "github": "GitHub"
+  },
+  "Layout": {
+    "title": "Snap Mind - 一键召唤灵感",
+    "description": "Snap Mind 是最快捕捉想法的方式。用快捷键召唤提示词，说出你的想法，剩下的交给我们。"
+  }
+}

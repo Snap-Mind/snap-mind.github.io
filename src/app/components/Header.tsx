@@ -2,6 +2,7 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@heroui/react';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
   const t = useTranslations('Header');
@@ -11,6 +12,7 @@ export default function Header() {
         <span className="text-2xl font-bold text-gray-800">{t('brand')}</span>
       </NavbarBrand>
       <NavbarContent justify="end">
+        <LanguageSwitcher />
         <NavbarItem>
           <Link
             href="https://github.com/Snap-Mind/snap-mind"

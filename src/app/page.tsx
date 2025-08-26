@@ -1,5 +1,7 @@
+import {useTranslations} from 'next-intl';
 
 export default function Home() {
+  const t = useTranslations('HomePage');
   return (
     <div className="bg-white text-gray-800">
       <header className="container mx-auto px-6 py-4 flex justify-between items-center">

@@ -1,28 +1,34 @@
+'use client';
 import React from 'react';
 import { Button, Card } from '@heroui/react';
 import { Icon } from '@iconify/react';
 
+import Threads from '../blocks/Backgrounds/Threads/Threads';
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen relative">
+      <div className="absolute inset-0 w-full h-[600px] -z-10">
+        <Threads amplitude={2.8} distance={0.2} enableMouseInteraction={true} />
+      </div>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <section className="text-center mb-20">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-background-500 leading-relaxed py-2">
-            AI at the Speed of Thought
-          </h1>
-          <p className="text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            No more copy-paste. No more app switching. Just select text, hit a hotkey, and get
-            instant translations, rewrites, or answers—right where you work.
-          </p>
-          <Button
-            className="bg-foreground text-default"
-            size="lg"
-            variant="shadow"
-            endContent={<Icon icon="lucide:arrow-right" />}
-          >
-            👉 Supercharge Your Workflow
-          </Button>
+        <section className="h-screen text-center mb-20 flex items-center justify-center">
+          <div>
+            <h1 className="text-4xl sm:text-5xl font-extrabold mb-6">AI at the Speed of Thought</h1>
+            <p className="text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              No more copy-paste. No more app switching. Just select text, hit a hotkey, and get
+              instant translations, rewrites, or answers—right where you work.
+            </p>
+            <Button
+              className="bg-foreground text-default"
+              size="lg"
+              variant="shadow"
+              endContent={<Icon icon="lucide:arrow-right" />}
+            >
+              👉 Supercharge Your Workflow with SnapMind
+            </Button>
+          </div>
         </section>
 
         {/* Why This App Section */}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, Image } from "@heroui/react";
+import { Button, Card } from "@heroui/react";
 import { Icon } from "@iconify/react";
 
 export default function Home() {
@@ -8,8 +8,8 @@ export default function Home() {
       <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <section className="text-center mb-20">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-            🚀 AI at the Speed of Thought
+          <h1 className="text-4xl sm:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-background-500 leading-relaxed py-2">
+            AI at the Speed of Thought
           </h1>
           <p className="text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             No more copy-paste. No more app switching. Just select text, hit a
@@ -17,8 +17,8 @@ export default function Home() {
             where you work.
           </p>
           <Button
+            className="bg-foreground text-default"
             size="lg"
-            color="primary"
             variant="shadow"
             endContent={<Icon icon="lucide:arrow-right" />}
           >
@@ -52,10 +52,7 @@ export default function Home() {
               },
             ].map((feature, index) => (
               <Card key={index} className="p-6 text-center">
-                <Icon
-                  icon={feature.icon}
-                  className="text-5xl mb-4 text-blue-500 mx-auto"
-                />
+                <Icon icon={feature.icon} className="text-5xl mb-4 mx-auto" />
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                 <div className="text-gray-600 dark:text-gray-300">
                   {feature.description}
@@ -72,11 +69,13 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              "Translate text instantly in any app.",
-              "Rewrite and polish writing with zero friction.",
-              "Summarize articles or research on the fly.",
-              "Explain complex terms in plain English.",
-              "Draft emails, responses, or code snippets in seconds.",
+              "Quickly translate selected text into any language, anywhere.",
+              "Make your writing clearer, shorter, or more professional with one keystroke.",
+              "Turn long paragraphs, articles, or reports into key takeaways instantly.",
+              "Highlight any concept, code snippet, or sentence—and get a simple explanation.",
+              "Generate replies, emails, or text snippets without switching apps.",
+              "Check grammar, simplify complex content, or rephrase text to aid understanding.",
+              "Turn notes or random thoughts into structured ideas, outlines, or action items.",
             ].map((useCase, index) => (
               <Card key={index} className="p-4">
                 <div className="flex items-start">
@@ -101,8 +100,8 @@ export default function Home() {
         {/* Final CTA Section */}
         <section className="text-center">
           <Button
+            className="bg-foreground text-default"
             size="lg"
-            color="primary"
             variant="shadow"
             endContent={<Icon icon="lucide:download" />}
           >

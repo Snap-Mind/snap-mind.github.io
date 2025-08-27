@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react';
 import {useTranslations} from 'next-intl';
 
 import Threads from '../blocks/Backgrounds/Threads/Threads';
+import DownloadButton from './components/DownloadButton';
 
 export default function Home() {
   const t = useTranslations('LandingPage');
@@ -49,7 +50,10 @@ export default function Home() {
             <p className="text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               {t('subHeadline')}
             </p>
-            <Button
+            <div className="mb-6 flex justify-center">
+              <DownloadButton />
+            </div>
+            {/* <Button
               className="bg-foreground text-default"
               size="lg"
               variant="shadow"
@@ -62,7 +66,7 @@ export default function Home() {
               }}
             >
               {t('heroCTA')}
-            </Button>
+            </Button> */}
           </div>
           {/* Down Arrow */}
           <button
@@ -143,7 +147,7 @@ export default function Home() {
         </section>
 
         {/* Final CTA Section */}
-        <section id="final-cta" className="text-center">
+        {/* <section id="final-cta" className="text-center">
           <Button
             className="bg-foreground text-default"
             size="lg"
@@ -152,7 +156,7 @@ export default function Home() {
           >
             {t('downloadCTA')}
           </Button>
-        </section>
+        </section> */}
       </main>
     </div>
   );

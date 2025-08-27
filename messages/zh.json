@@ -31,5 +31,11 @@
   "Layout": {
     "title": "Snap Mind - 一键召唤灵感",
     "description": "Snap Mind 是最快捕捉想法的方式。用快捷键召唤提示词，说出你的想法，剩下的交给我们。"
+  },
+  "Download": {
+  "win64": "下载 Windows x64 版",
+  "macIntel": "下载 macOS (Intel)",
+  "macArm": "下载 macOS (Apple Silicon)",
+  "redirecting": "正在跳转..."
   }
 }

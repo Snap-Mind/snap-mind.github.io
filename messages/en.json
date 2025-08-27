@@ -32,5 +32,11 @@
   "Layout": {
     "title": "Snap Mind - Instant Recall with a Keystroke",
     "description": "Snap Mind is the fastest way to capture your thoughts. Summon a prompt with a simple hotkey, speak your mind, and let us handle the rest."
+  },
+  "Download": {
+  "win64": "Download Windows (x64)",
+  "macIntel": "Download macOS (Intel)",
+  "macArm": "Download macOS (Apple Silicon)",
+  "redirecting": "Redirecting..."
   }
 }

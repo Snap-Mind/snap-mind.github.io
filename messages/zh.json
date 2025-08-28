@@ -1,24 +1,24 @@
 {
   "LandingPage": {
-    "headline": "思维速度的AI",
-    "subHeadline": "无需复制粘贴，无需切换应用。只需选中文本，按下快捷键，即可在工作界面即时翻译、改写或获取答案。",
-    "heroCTA": "👉 用 SnapMind 提升你的工作流",
-    "whyThisApp": "为什么选择这个应用",
-    "reason1": "极快",
-    "reason2": "无缝",
-    "reason3": "可定制",
-    "reason1Description": "一键触发AI。",
-    "reason2Description": "在任何应用内工作，流程不被打断。",
-    "reason3Description": "为常用任务自定义提示词。",
-    "useCase1": "随时随地快速翻译选中文本。",
-    "useCase2": "一键让你的写作更清晰、更简洁或更专业。",
-    "useCase3": "瞬间将长段落、文章或报告提炼为关键要点。",
-    "useCase4": "高亮任何概念、代码片段或句子，获得简单解释。",
-    "useCase5": "无需切换应用即可生成回复、邮件或文本片段。",
-    "useCase6": "检查语法、简化复杂内容或重述文本以便理解。",
-    "useCase7": "将笔记或灵感转化为结构化想法、大纲或行动项。",
-    "finalCTA": "“不要适应AI，让AI适应你。”",
-    "downloadCTA": "⚡ 立即下载，让AI成为你的最快捷方式"
+    "headline": "思维的速度，AI的力量",
+    "subHeadline": "无需复制粘贴，无需切换应用。只需选中文本、按下快捷键，即可瞬间完成翻译、改写或获取答案。让工作保持专注，不被打断。",
+    "heroCTA": "👉 立即用 SnapMind 提升效率",
+    "whyThisApp": "为什么选择 SnapMind",
+    "reason1": "极致快速",
+    "reason2": "无缝体验",
+    "reason3": "高度定制",
+    "reason1Description": "一键触发 AI，瞬间完成任务。",
+    "reason2Description": "在任何应用中使用，不打断工作流。",
+    "reason3Description": "为常用任务设置专属快捷指令。",
+    "useCase1": "随时随地，快速翻译选中文本，支持多语言。",
+    "useCase2": "让文字更简洁、更专业、更流畅，只需一键。",
+    "useCase3": "长文、报告、文章，一键生成关键信息。",
+    "useCase4": "不懂的术语、代码、概念？高亮后立即获得简单说明。",
+    "useCase5": "写邮件、回复或文本片段，无需跳转应用。",
+    "useCase6": "检查语法、简化复杂表达，辅助快速理解。",
+    "useCase7": "把零散的笔记和想法转化为结构化的思路和行动方案。",
+    "finalCTA": "“别再适应 AI，让 AI 来适应你。”",
+    "downloadCTA": "⚡ 免费下载 SnapMind，立即体验效率新高度"
   },
   "Header": {
     "brand": "SnapMind",
@@ -33,9 +33,9 @@
     "description": "Snap Mind 是最快捕捉想法的方式。用快捷键召唤提示词，说出你的想法，剩下的交给我们。"
   },
   "Download": {
-  "win64": "下载 Windows x64 版",
-  "macIntel": "下载 macOS (Intel)",
-  "macArm": "下载 macOS (Apple Silicon)",
-  "redirecting": "正在跳转..."
+    "win64": "下载 Windows x64 版",
+    "macIntel": "下载 macOS (Intel)",
+    "macArm": "下载 macOS (Apple Silicon)",
+    "redirecting": "正在跳转..."
   }
 }

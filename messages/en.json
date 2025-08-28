@@ -19,7 +19,6 @@
     "useCase7": "Turn notes or random thoughts into structured ideas, outlines, or action items.",
     "finalCTA": "\"Don't adapt to AI. Let AI adapt to you.\"",
     "downloadCTA": "⚡ Download now and make AI your fastest shortcut"
-
   },
   "Header": {
     "brand": "SnapMind",
@@ -34,9 +33,11 @@
     "description": "Snap Mind is the fastest way to capture your thoughts. Summon a prompt with a simple hotkey, speak your mind, and let us handle the rest."
   },
   "Download": {
-  "win64": "Download Windows (x64)",
-  "macIntel": "Download macOS (Intel)",
-  "macArm": "Download macOS (Apple Silicon)",
-  "redirecting": "Redirecting..."
+    "win64": "Download Windows (x64)",
+    "macIntel": "Download macOS (Intel)",
+    "macArm": "Download macOS (Apple Silicon)",
+    "redirecting": "Redirecting...",
+    "unsupported": "Unsupported device",
+    "unsupportedDeviceWarn": "Current device is not supported. Supported platforms: Windows (x64), macOS (Intel), macOS (Apple Silicon)."
   }
 }

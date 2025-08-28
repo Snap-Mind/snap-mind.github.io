@@ -36,6 +36,8 @@
     "win64": "下载 Windows x64 版",
     "macIntel": "下载 macOS (Intel)",
     "macArm": "下载 macOS (Apple Silicon)",
-    "redirecting": "正在跳转..."
+    "redirecting": "正在跳转...",
+    "unsupported": "不支持的设备",
+    "unsupportedDeviceWarn": "当前设备不受支持。支持的平台：Windows (x64)、macOS (Intel)、macOS (Apple Silicon)。"
   }
 }

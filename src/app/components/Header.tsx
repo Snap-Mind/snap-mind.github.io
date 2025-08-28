@@ -20,10 +20,7 @@ export default function Header() {
             rel="noopener noreferrer"
             aria-label={t('githubRepo')}
           >
-            <Icon
-              icon="octicon:mark-github-24"
-              className="text-4xl dark:text-gray-300"
-            />
+            <Icon icon="octicon:mark-github-24" className="text-4xl dark:text-gray-300" />
           </Link>
         </NavbarItem>
       </NavbarContent>

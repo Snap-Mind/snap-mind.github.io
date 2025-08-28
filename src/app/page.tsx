@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button, Card } from '@heroui/react';
 import { Icon } from '@iconify/react';
-import {useTranslations} from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 import Threads from '../blocks/Backgrounds/Threads/Threads';
 import DownloadButton from './components/DownloadButton';
@@ -38,13 +38,19 @@ export default function Home() {
   };
 
   return (
-  <div className="min-h-screen relative" style={{ '--navbar-height': '4rem' } as React.CSSProperties}>
+    <div
+      className="min-h-screen relative"
+      style={{ '--navbar-height': '4rem' } as React.CSSProperties}
+    >
       <div className="absolute inset-0 w-full h-[600px] -z-10">
         <Threads amplitude={2.8} distance={0.2} enableMouseInteraction={true} />
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <section className="min-h-[calc(100vh-var(--navbar-height))] text-center mb-20 flex items-center justify-center relative" style={{ scrollSnapAlign: 'start' }}>
+        <section
+          className="min-h-[calc(100vh-var(--navbar-height))] text-center mb-20 flex items-center justify-center relative"
+          style={{ scrollSnapAlign: 'start' }}
+        >
           <div>
             <h1 className="text-4xl sm:text-5xl font-extrabold mb-6">{t('headline')}</h1>
             <p className="text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -141,9 +147,7 @@ export default function Home() {
 
         {/* Tagline Section */}
         <section className="text-center mb-20">
-          <h2 className="text-3xl font-bold italic mb-4">
-            {t('finalCTA')}
-          </h2>
+          <h2 className="text-3xl font-bold italic mb-4">{t('finalCTA')}</h2>
         </section>
 
         {/* Final CTA Section */}

@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Button, Card } from '@heroui/react';
+import { Card } from '@heroui/react';
 import { Icon } from '@iconify/react';
 import { useTranslations } from 'next-intl';
 

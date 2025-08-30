@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './styles/globals.css';
 
-import { Providers } from './providers';
-import Header from './components/Header';
-import Footer from './components/Footer';
+// Root layout: wraps only the root redirect page; real content lives under /[locale]
+const DEFAULT_LOCALE = 'en';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,22 +13,10 @@ export const metadata: Metadata = {
     'Snap Mind is the fastest way to capture your thoughts. Summon a prompt with a simple hotkey, speak your mind, and let us handle the rest.',
 };
 
-import { cookies } from 'next/headers';
-
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const store = await cookies();
-  const locale = store.get('locale')?.value || 'en';
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={locale}>
-      <body className={inter.className}>
-        <Header />
-        <Providers>{children}</Providers>
-        <Footer />
-      </body>
+    <html lang={DEFAULT_LOCALE}>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

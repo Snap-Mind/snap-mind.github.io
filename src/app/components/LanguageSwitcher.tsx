@@ -2,6 +2,7 @@
 
 import { Select, SelectItem } from '@heroui/react';
 import { useEffect, useState } from 'react';
+import { usePathname, useRouter, useParams } from 'next/navigation';
 
 interface Languages {
   key: string;
@@ -16,25 +17,26 @@ const languages: Languages[] = [
 function LanguageSwitcher() {
   const [selectedLanguage, setSelectedLanguage] = useState<Languages | null>(null);
 
+  const pathname = usePathname();
+  const router = useRouter();
+  const params = useParams();
+
   useEffect(() => {
-    const cookieLocale = document.cookie
-      .split('; ')
-      .find((row) => row.startsWith('locale='))
-      ?.split('=')[1];
-
-    const newSelectedLanguage = languages.find((l) => l.key === cookieLocale);
-
-    if (newSelectedLanguage) {
-      setSelectedLanguage(newSelectedLanguage);
-    }
-  }, []);
+    const currentLocale = (params?.locale as string) || 'en';
+    const newSelectedLanguage = languages.find((l) => l.key === currentLocale) || languages[0];
+    setSelectedLanguage(newSelectedLanguage);
+  }, [params]);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLocale = e.target.value;
-
-    document.cookie = `locale=${newLocale}; path=/`;
-
-    window.location.reload();
+    // Replace the first segment (locale)
+    const segments = pathname.split('/').filter(Boolean);
+    if (segments.length === 0) {
+      router.push(`/${newLocale}`);
+      return;
+    }
+    segments[0] = newLocale;
+    router.push('/' + segments.join('/'));
   };
 
   return (

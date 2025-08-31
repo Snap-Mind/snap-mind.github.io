@@ -3,12 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { Button, Link } from '@heroui/react';
 import { Icon } from '@iconify/react';
 
-const downloadLinks = {
-  win64: 'https://github.com/Snap-Mind/snap-mind/releases/latest/download/app-installer-x64.exe',
-  macIntel:
-    'https://github.com/Snap-Mind/snap-mind/releases/latest/download/app-installer-intel.dmg',
-  macArm: 'https://github.com/Snap-Mind/snap-mind/releases/latest/download/app-installer-arm64.dmg',
+const downloadFiles = {
+  win64: 'SnapMind-0.1.0-x64-setup.exe',
+  macIntel: 'SnapMind-0.1.0.dmg',
+  macArm: 'SnapMind-0.1.0-arm64.dmg',
 };
+
+const BASE_URL = 'https://github.com/Snap-Mind/snap-mind/releases/latest/download/';
+
+const downloadLinks = Object.fromEntries(
+  Object.entries(downloadFiles).map(([key, file]) => [key, `${BASE_URL}${file}`])
+);
 
 function detectPlatform() {
   const ua = window.navigator.userAgent;

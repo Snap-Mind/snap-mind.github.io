@@ -15,19 +15,35 @@ const downloadLinks = Object.fromEntries(
   Object.entries(downloadFiles).map(([key, file]) => [key, `${BASE_URL}${file}`])
 );
 
-function detectPlatform() {
-  const ua = window.navigator.userAgent;
-  if (/Windows/.test(ua)) {
-    return 'win64';
-  }
-  if (/Macintosh/.test(ua)) {
-    if (/arm64|Apple/.test(ua)) {
-      return 'macArm';
-    }
+async function detectPlatform() {
+  if (navigator.userAgentData) {
+    try {
+      const uaData = await navigator.userAgentData.getHighEntropyValues([
+        'platform',
+        'architecture',
+      ]);
 
-    return 'macIntel';
+      const os = uaData.platform || 'Unknown';
+      const architecture = uaData.architecture || 'Unknown';
+
+      if (os === 'Windows') {
+        return 'win64';
+      }
+
+      if (os === 'macOS') {
+        if (architecture === 'arm') {
+          return 'macArm';
+        }
+
+        return 'macIntel';
+      }
+
+      return { os, architecture };
+    } catch (e) {
+      console.error('Failed to get high-entropy values:', e);
+      return null;
+    }
   }
-  return null;
 }
 
 type PlatformType = 'win64' | 'macIntel' | 'macArm' | null;
@@ -39,12 +55,15 @@ export default function DownloadButton() {
   const [warning, setWarning] = useState<string | null>(null);
 
   useEffect(() => {
-    const detected = detectPlatform() as PlatformType;
-    setPlatform(detected);
-    if (!detected) {
-      setWarning(t('unsupportedDeviceWarn'));
-      setDisabled(true);
-    }
+    const init = async () => {
+      const detected = (await detectPlatform()) as PlatformType;
+      setPlatform(detected);
+      if (!detected) {
+        setWarning(t('unsupportedDeviceWarn'));
+        setDisabled(true);
+      }
+    };
+    init();
   }, [t]);
 
   let label = '';

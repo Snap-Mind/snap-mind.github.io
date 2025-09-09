@@ -3,6 +3,15 @@ import React, { useEffect, useState } from 'react';
 import { Button, Link } from '@heroui/react';
 import { Icon } from '@iconify/react';
 
+type PlatformType = {
+  os: OS;
+  architecture: Architecture;
+} | null;
+
+type OS = 'Windows' | 'macOS' | null;
+
+type Architecture = 'win64' | 'macIntel' | 'macArm' | null;
+
 const downloadFiles = {
   win64: 'SnapMind-0.1.4-x64-setup.exe',
   macIntel: 'SnapMind-0.1.4.dmg',
@@ -15,7 +24,7 @@ const downloadLinks = Object.fromEntries(
   Object.entries(downloadFiles).map(([key, file]) => [key, `${BASE_URL}${file}`])
 );
 
-async function detectPlatform() {
+async function detectPlatform(): Promise<PlatformType> {
   if (navigator.userAgentData) {
     try {
       const uaData = await navigator.userAgentData.getHighEntropyValues([
@@ -23,56 +32,64 @@ async function detectPlatform() {
         'architecture',
       ]);
 
-      const os = uaData.platform || 'Unknown';
-      const architecture = uaData.architecture || 'Unknown';
+      const userOS = uaData.platform || 'Unknown';
+      const userArch = uaData.architecture || 'Unknown';
 
-      if (os === 'Windows') {
-        return 'win64';
+      let os: OS = null;
+      let arch: Architecture = null;
+
+      if (userOS === 'Windows') {
+        os = 'Windows'
+        arch = 'win64';
       }
 
-      if (os === 'macOS') {
-        if (architecture === 'arm') {
-          return 'macArm';
+      if (userOS === 'macOS') {
+        os = 'macOS';
+        if (userArch === 'arm') {
+          arch = 'macArm';
+        } else {
+          arch = 'macIntel';
         }
-
-        return 'macIntel';
       }
 
-      return { os, architecture };
+      return { os, architecture: arch };
     } catch (e) {
       console.error('Failed to get high-entropy values:', e);
-      return null;
+      return { os: null, architecture: null };
     }
+  } else {
+    return { os: null, architecture: null };
   }
 }
 
-type PlatformType = 'win64' | 'macIntel' | 'macArm' | null;
+
 
 export default function DownloadButton() {
   const t = useTranslations('Download');
   const [platform, setPlatform] = useState<PlatformType>(null);
   const [disabled, setDisabled] = useState(false);
   const [warning, setWarning] = useState<string | null>(null);
+  const [detecting, setDetecting] = useState(true);
 
   useEffect(() => {
-    const init = async () => {
-      const detected = (await detectPlatform()) as PlatformType;
+    (async () => {
+      const detected = await detectPlatform();
       setPlatform(detected);
       if (!detected) {
         setWarning(t('unsupportedDeviceWarn'));
         setDisabled(true);
       }
-    };
-    init();
+      setDetecting(false);
+    })();
   }, [t]);
 
   let label = '';
-  if (platform === 'win64') label = t('win64');
-  if (platform === 'macIntel') label = t('macIntel');
-  if (platform === 'macArm') label = t('macArm');
+  if (platform?.architecture === 'win64') label = t('win64');
+  if (platform?.architecture === 'macIntel') label = t('macIntel');
+  if (platform?.architecture === 'macArm') label = t('macArm');
   if (!platform) label = t('unsupportedDeviceWarn');
 
-  const link = platform ? downloadLinks[platform] : '#';
+  const link = platform?.architecture ? downloadLinks[platform.architecture] : '#';
 
   const handleClick = () => {
     if (disabled) {
@@ -87,6 +104,9 @@ export default function DownloadButton() {
     if (disabled) return t('redirecting');
     return label;
   };
+
+  // Hide entirely while detecting to avoid flashing unsupported state
+  if (detecting) return null;
 
   return (
     <div className="flex flex-col items-center gap-2">

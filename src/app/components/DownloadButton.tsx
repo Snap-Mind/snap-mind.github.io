@@ -4,9 +4,9 @@ import { Button, Link } from '@heroui/react';
 import { Icon } from '@iconify/react';
 
 const downloadFiles = {
-  win64: 'SnapMind-0.1.3-x64-setup.exe',
-  macIntel: 'SnapMind-0.1.3.dmg',
-  macArm: 'SnapMind-0.1.3-arm64.dmg',
+  win64: 'SnapMind-0.1.4-x64-setup.exe',
+  macIntel: 'SnapMind-0.1.4.dmg',
+  macArm: 'SnapMind-0.1.4-arm64.dmg',
 };
 
 const BASE_URL = 'https://github.com/Snap-Mind/snap-mind/releases/latest/download/';

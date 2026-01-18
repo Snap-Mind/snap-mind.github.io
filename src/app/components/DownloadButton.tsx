@@ -13,9 +13,9 @@ type OS = 'Windows' | 'macOS' | null;
 type Architecture = 'win64' | 'macIntel' | 'macArm' | null;
 
 const downloadFiles = {
-  win64: 'SnapMind-0.3.1-x64-setup.exe',
-  macIntel: 'SnapMind-0.3.1.dmg',
-  macArm: 'SnapMind-0.3.1-arm64.dmg',
+  win64: 'SnapMind-0.4.0-x64-setup.exe',
+  macIntel: 'SnapMind-0.4.0.dmg',
+  macArm: 'SnapMind-0.4.0-arm64.dmg',
 };
 
 const BASE_URL = 'https://github.com/Snap-Mind/snap-mind/releases/latest/download/';
